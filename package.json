@@ -6,10 +6,11 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.16.0",
+    "body-parser": "^1.16.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
-    "express": "^4.14.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
     "express-validator": "^3.1.2",
     "jade": "~1.11.0",
     "mongojs": "^2.4.0",
@@ -20,8 +21,15 @@
   "main": "app.js",
   "devDependencies": {
     "git-push": "^0.1.1"
-    
   },
   "author": "Çağdaş Köse & Kübra Zeray",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chatodesouza/CustomerApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chatodesouza/CustomerApp/issues"
+  },
+  "homepage": "https://github.com/chatodesouza/CustomerApp#readme"
 }

@@ -1,4 +1,5 @@
 <% include partials/header.ejs %>
+
 <h1>Add Customer</h1>
 <% if(errors != undefined) { %>
     <ul>
@@ -8,17 +9,21 @@
     </ul>
 <% } %>
 <form method="POST" action="/users/add" >
-    <label class="label">First Name:</label>
+    <label class="label" color="a">*First Name:</label>
     <br>
-    <input type="text" name="first_name">
+    <input type="text" name="first_name" id="nameCustomerSubmit">
     <br>
-    <label>Last Name:</label>
+    <label>*Last Name:</label>
     <br>
     <input type="text" name="last_name">
     <br>
-    <label>E-mail:</label>
+    <label>*E-mail:</label>
     <br>
     <input type="email" name="email">
+    <br>
+    <label>*Re-enter e-mail:</label>
+    <br>
+    <input type="email" name="remail">
     <br>
     <br>
     <div class="button">

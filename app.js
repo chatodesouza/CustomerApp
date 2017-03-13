@@ -104,6 +104,14 @@ app.post('/users/add', function(request, response){
         request.checkBody('last_name', 'Last Name is Required').notEmpty();
         // Kural: E-mail bölümünün boş geçilemeyeceği
         request.checkBody('email', 'E-mail is Required').notEmpty();
+        // Kural: Re-Enter E-mail bölümünün boş geçilemeyeceği
+        var remailFilled = request.checkBody('remail', 'Re-entering E-mail is Required').notEmpty();
+
+/*        request.getValidationResult().then(function(result)){
+            if(!result.include("E-mail is Required.")||!result.include("Re-entering E-mail is Required")){
+        request.checkBody('remail', 'E-mail info should be the same.');
+            }
+        }*/
 
         var errors = request.validationErrors();
 
@@ -120,7 +128,7 @@ app.post('/users/add', function(request, response){
                 first_name: request.body.first_name,
                 last_name: request.body.last_name,
                 email: request.body.email
-            }
+            };
             //users.push(newUser);
 
             db.users.insert(newUser, function (err, result) {
@@ -128,6 +136,7 @@ app.post('/users/add', function(request, response){
                     console.log(err);
                 }
                 result.redirect('/');
+
             });
 
 
